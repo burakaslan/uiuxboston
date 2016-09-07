@@ -7,6 +7,7 @@ body {
   padding: 0;
   color: #3e3e3e;
   display: flex;
+  background-image: url("splash.jpeg");
   font-family: 'Roboto Slab', serif;
   background-position: center center;
   background-repeat: no-repeat;
@@ -14,22 +15,30 @@ body {
 
 .left {
   flex: 1;
-  background-image: url("phone.svg");
   margin: 0;
   height: 100%;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+    flex-direction: column;
   background-size: cover;
-  background-color: #52C6A5;
+  background-color: rgba(82, 198, 165, 1);
   color: #3e3e3e;
   display: flex;
   font-family: 'Roboto Slab', serif;
   background-position: center center;
   background-repeat: no-repeat;
-
 }
 
 .right {
   flex: 2;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(256, 256, 256, 0.9);
   align-self: center;
 }
 
@@ -49,7 +58,7 @@ body {
 .logo {
   height: 3rem;
   z-index: 2;
-  position: relative;
+  position: absolute;;
   top: 2rem;
   left: 2rem;
   background-position: center center;
@@ -128,16 +137,71 @@ align-self: center;
   height: 30px;
 }
 
+.next-class {
+  align-self: center;
+  color: white;
+  text-align: center;
+}
+
+.cal {
+  border: 4px solid white;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.month {
+  padding: 0.5rem 2rem;
+  font-size: 30px;
+
+  border-bottom: 4px solid white;
+}
+
+.day {
+  padding: 1rem;
+  font-size: 60px;
+
+}
+
+.event {
+  margin: 1rem 0;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.speaker>p {
+  margin: 1rem;
+  font-size: 20px;
+  align-self: center;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.speaker {
+  display: flex;
+}
+
+.speaker>img {
+  height: 3rem;
+  width: 3rem;
+  transition: border .15s;
+  border-radius: 50%;
+}
+
 
 @media (max-width: 900px) {
   body {
     flex-direction: column;
+    background-image: none;
     overflow-y: scroll;
     position: absolute;
   }
   .left {
-    min-height: 300px;
+    min-height: 500px;
     background-position: center top;
+  }
+  .right {
+    height: auto;
+    display: block;
   }
   .sponsors {
     margin-bottom: 3rem;
